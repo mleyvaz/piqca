@@ -102,6 +102,7 @@ region_exterior <- function(E, nombres, include = "?", max_ind = 14, row.dom = F
     v[v == "ind"] <- "0"   # no deberia quedar ninguno
     sols[c] <- .minimizar_out(G, v, include, row.dom)
   }
+  if (any(sols == "(sin solucion)")) stop("Exterior incompleta: ", sum(sols == "(sin solucion)"), " minimizaciones fallidas")
   sort(table(sols), decreasing = TRUE)
 }
 
@@ -150,7 +151,13 @@ region_interior <- function(Xl, Xu, Yl, Yu, incl.cut, n.cut = 1, include = "?",
 }
 
 ## Resumen --------------------------------------------------------------------
+## Correccion 8-oct-2026: una minimizacion fallida ("(sin solucion)") NO es una solucion.
+## En la cota interior se descarta (cualquier subconjunto de R sigue siendo cota interior);
+## en la exterior invalida la enumeracion (descartarla podria agrandar K(R+)), asi que
+## region_exterior() falla y el llamador la trata como no enumerada.
 nucleo <- function(tabla_sols) {
+  tabla_sols <- tabla_sols[names(tabla_sols) != "(sin solucion)"]
+  if (!length(tabla_sols)) return(character(0))
   terms <- lapply(names(tabla_sols), .terminos)
   if (any(lengths(terms) == 0)) return(character(0))
   Reduce(intersect, terms)

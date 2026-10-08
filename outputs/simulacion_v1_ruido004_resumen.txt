@@ -1,0 +1,55 @@
+Replicas: 900 
+
+  mecanismo    p   n N_completos full_con_falsos elim_con_falsos
+1      MCAR 0.05 100        48.6              74              77
+2      MCAR 0.10 100        39.8              70              66
+3      MCAR 0.20 100        23.8              79              60
+4 MNAR_alto 0.05 100        47.5              74              64
+5 MNAR_alto 0.10 100        37.1              77              42
+6 MNAR_alto 0.20 100        23.3              72              25
+7 MNAR_bajo 0.05 100        51.0              74              82
+8 MNAR_bajo 0.10 100        44.1              72              87
+9 MNAR_bajo 0.20 100        33.2              72              58
+  imput_con_falsos elim_distinta_full imput_distinta_full cierta_vacia
+1               81                 68                  43            2
+2               73                 69                  47           22
+3               74                 77                  69           86
+4               82                 42                  39            1
+5               90                 57                  41            8
+6               87                 78                  72           61
+7               66                 70                  46            8
+8               60                 82                  59           35
+9               53                 97                  85           94
+  cierta_con_falsos cierta_en_full full_alcanzada exterior_enumerada
+1                12            100             98                100
+2                 2            100            100                 97
+3                 0            100             98                 11
+4                25            100            100                100
+5                 8            100            100                 98
+6                 0            100             99                 34
+7                16            100             98                100
+8                 5            100             98                 89
+9                 0            100             88                  6
+  elim_incompatible_certificada n_incompatible n_enumeradas soluciones_interior
+1                             4              4          100                 4.6
+2                             0              0           97                 8.7
+3                             0              0           11                23.0
+4                             5              5          100                 3.1
+5                             2              2           98                 4.9
+6                             0              0           34                11.8
+7                             4              4          100                 5.5
+8                             0              0           89                13.4
+9                             0              0            6                38.2
+
+Definiciones: '_con_falsos' = % de replicas cuya solucion contiene al menos un termino que no implica el modelo verdadero A*B + C; 'distinta_full' = % en que la solucion difiere de la obtenida con datos completos; 'cierta_*' = solucion cierta estimada por la cota interior (K(R-), cota superior de la verdadera); 'elim_incompatible_certificada' = % de las replicas con cota exterior enumerada en que la solucion por eliminacion queda fuera de R+.
+
+Agregado p >= 0.10:
+                  todos  MCAR MNAR_alto MNAR_bajo
+n                 600.0 200.0     200.0     200.0
+cierta_con_falsos   2.5   1.0       4.0       2.5
+elim_con_falsos    56.3  63.0      33.5      72.5
+imput_con_falsos   72.8  73.5      88.5      56.5
+full_con_falsos    73.7  74.5      74.5      72.0
+
+Replicas con terminos falsos en la cierta pero no en la solucion con datos completos: 0 de 900 
+Replicas en que la cierta contiene solo terminos de la solucion con datos completos: 900 de 900 

@@ -1,0 +1,104 @@
+
+=====================================================================
+ C01 Y: altas restricciones | corte 0.75 | include = "?" 
+  S0 (eliminacion, N = 155 ): ~RELFRAG*SR1900*~FOG + GDP*SR1900*~FOG + GDP*SR1900*~SUPPURB + SR1900*~FOG*~SUPPREL*SUPPURB + SR1900*SUPPREL*~SUPPURB 
+    Filas observadas y OUT=1 estable NO cubiertas: 0 
+    Filas observadas y OUT=0 estable CUBIERTAS: 0 
+    ==> S0 fuera de R certificado sin enumerar: FALSE 
+    Terminos publicados que ninguna completacion admite: ninguno 
+  Cotas exactas de cada termino publicado (todas las completaciones de N = 169 ):
+                      termino incl_pub incl_min incl_max cov_pub cov_min
+         ~RELFRAG*SR1900*~FOG    0.764    0.734    0.764   0.470   0.455
+              GDP*SR1900*~FOG    0.804    0.753    0.818   0.343   0.323
+          GDP*SR1900*~SUPPURB    0.787    0.748    0.809   0.259   0.245
+ SR1900*~FOG*~SUPPREL*SUPPURB    0.750    0.732    0.754   0.231   0.219
+      SR1900*SUPPREL*~SUPPURB    0.756    0.742    0.752   0.234   0.249
+ cov_max
+   0.478
+   0.352
+   0.280
+   0.221
+   0.249
+
+=====================================================================
+ C01 ~Y: bajas restricciones | corte 0.9 | include = "?" 
+  S0 (eliminacion, N = 155 ): ~SR1900*~SUPPREL*SUPPURB + GDP*~SR1900*SUPPREL + GDP*FOG*~SUPPREL*SUPPURB + RELFRAG*~SR1900 
+    Filas observadas y OUT=1 estable NO cubiertas: 0 
+    Filas observadas y OUT=0 estable CUBIERTAS: 0 
+    ==> S0 fuera de R certificado sin enumerar: FALSE 
+    Terminos publicados que ninguna completacion admite: ninguno 
+  Cotas exactas de cada termino publicado (todas las completaciones de N = 169 ):
+                  termino incl_pub incl_min incl_max cov_pub cov_min cov_max
+ ~SR1900*~SUPPREL*SUPPURB    0.879    0.887    0.892   0.224   0.219   0.230
+      GDP*~SR1900*SUPPREL    0.933    0.930    0.951   0.107   0.097   0.137
+ GDP*FOG*~SUPPREL*SUPPURB    0.892    0.894    0.899   0.347   0.320   0.337
+          RELFRAG*~SR1900    0.866    0.881    0.890   0.321   0.339   0.365
+
+=====================================================================
+ C02 Y: muchos jovenes (parsimoniosa) | corte 0.8 | include = "?" 
+  S0 (eliminacion, N = 105 ): ~YOUTH*ELEC*PROG + GDP*ELEC*~DEC*YOUNG + GDP*ELEC*PROG*~YOUNG 
+    Filas observadas y OUT=1 estable NO cubiertas: 0 
+    Filas observadas y OUT=0 estable CUBIERTAS: 0 
+    ==> S0 fuera de R certificado sin enumerar: FALSE 
+    Terminos publicados que ninguna completacion admite: ninguno 
+  Cotas exactas de cada termino publicado (todas las completaciones de N = 127 ):
+              termino incl_pub incl_min incl_max cov_pub cov_min cov_max
+     ~YOUTH*ELEC*PROG    0.791    0.785    0.785   0.375   0.357   0.357
+  GDP*ELEC*~DEC*YOUNG    0.850    0.836    0.881   0.178   0.151   0.198
+ GDP*ELEC*PROG*~YOUNG    0.754    0.764    0.764   0.383   0.352   0.352
+
+=====================================================================
+ C02 ~Y: pocos jovenes (parsimoniosa) | corte 0.8 | include = "?" 
+  S0 (eliminacion, N = 105 ): ~ELEC + ~GDP*~PROG*~YOUNG + ~YOUTH*DEC*~PROG + GDP*DEC*YOUNG + YOUTH*~DEC*~YOUNG 
+    Filas observadas y OUT=1 estable NO cubiertas: 0 
+    Filas observadas y OUT=0 estable CUBIERTAS: 0 
+    ==> S0 fuera de R certificado sin enumerar: FALSE 
+    Terminos publicados que ninguna completacion admite: ninguno 
+  Cotas exactas de cada termino publicado (todas las completaciones de N = 127 ):
+           termino incl_pub incl_min incl_max cov_pub cov_min cov_max
+             ~ELEC    0.808    0.832    0.832   0.319   0.330   0.330
+ ~GDP*~PROG*~YOUNG    0.861    0.882    0.882   0.300   0.311   0.311
+  ~YOUTH*DEC*~PROG    0.947    0.772    0.963   0.237   0.192   0.282
+     GDP*DEC*YOUNG    0.860    0.783    0.887   0.125   0.101   0.129
+ YOUTH*~DEC*~YOUNG    0.849    0.838    0.869   0.410   0.332   0.394
+
+=====================================================================
+ C02 Y: muchos jovenes (conservadora) | corte 0.8 | include = "" 
+  S0 (eliminacion, N = 105 ): ~YOUTH*~GDP*ELEC*DEC*PROG + ~YOUTH*ELEC*PROG*~YOUNG + ~YOUTH*GDP*ELEC*~DEC*YOUNG + GDP*ELEC*PROG*~YOUNG 
+    Filas observadas y OUT=1 estable NO cubiertas: 0 
+    Filas observadas y OUT=0 estable CUBIERTAS: 0 
+    Remanentes en toda completacion CUBIERTAS (conservadora): 0 
+    ==> S0 fuera de R certificado sin enumerar: FALSE 
+    Terminos publicados que ninguna completacion admite: ninguno 
+  Cotas exactas de cada termino publicado (todas las completaciones de N = 127 ):
+                    termino incl_pub incl_min incl_max cov_pub cov_min cov_max
+  ~YOUTH*~GDP*ELEC*DEC*PROG    0.886    0.829    0.901   0.166   0.141   0.166
+    ~YOUTH*ELEC*PROG*~YOUNG    0.778    0.771    0.771   0.307   0.289   0.289
+ ~YOUTH*GDP*ELEC*~DEC*YOUNG    0.904    0.885    0.924   0.154   0.131   0.169
+       GDP*ELEC*PROG*~YOUNG    0.754    0.764    0.764   0.383   0.352   0.352
+
+=====================================================================
+ C02 ~Y: pocos jovenes (conservadora) | corte 0.8 | include = "" 
+  S0 (eliminacion, N = 105 ): ~ELEC*~DEC*PROG*~YOUNG + ~YOUTH*~ELEC*~PROG*YOUNG + ~YOUTH*~GDP*~DEC*~PROG*~YOUNG + ~YOUTH*GDP*DEC*~PROG + GDP*~ELEC*~YOUNG + YOUTH*ELEC*~DEC*~YOUNG + YOUTH*GDP*ELEC*DEC*PROG*YOUNG 
+    Filas observadas y OUT=1 estable NO cubiertas: 0 
+    Filas observadas y OUT=0 estable CUBIERTAS: 0 
+    Remanentes en toda completacion CUBIERTAS (conservadora): 0 
+    ==> S0 fuera de R certificado sin enumerar: FALSE 
+    Terminos publicados que ninguna completacion admite: ninguno 
+  Cotas exactas de cada termino publicado (todas las completaciones de N = 127 ):
+                       termino incl_pub incl_min incl_max cov_pub cov_min
+        ~ELEC*~DEC*PROG*~YOUNG    0.972    0.971    0.980   0.107   0.087
+      ~YOUTH*~ELEC*~PROG*YOUNG    0.921    0.922    0.922   0.096   0.079
+ ~YOUTH*~GDP*~DEC*~PROG*~YOUNG    0.895    0.882    0.920   0.170   0.138
+          ~YOUTH*GDP*DEC*~PROG    0.934    0.873    0.942   0.189   0.153
+              GDP*~ELEC*~YOUNG    0.978    0.983    0.983   0.161   0.170
+        YOUTH*ELEC*~DEC*~YOUNG    0.810    0.796    0.827   0.294   0.239
+ YOUTH*GDP*ELEC*DEC*PROG*YOUNG    0.854    0.854    0.880   0.050   0.040
+ cov_max
+   0.122
+   0.079
+   0.186
+   0.176
+   0.170
+   0.268
+   0.051

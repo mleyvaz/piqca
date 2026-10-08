@@ -1,0 +1,61 @@
+
+=====================================================================
+ C01 Y altas restricciones 
+  Completaciones por tipo:
+
+ extrema interior  vertice 
+     128      200      200 
+  Frecuencia de cada termino publicado por tipo de completacion:
+                             extrema vertice interior todas
+~RELFRAG*SR1900*~FOG           0.617   0.820    0.635 0.701
+GDP*SR1900*~FOG                0.742   0.900    0.710 0.790
+GDP*SR1900*~SUPPURB            1.000   1.000    1.000 1.000
+SR1900*~FOG*~SUPPREL*SUPPURB   0.625   0.955    0.475 0.693
+SR1900*SUPPREL*~SUPPURB        0.375   0.365    0.335 0.356
+  Soluciones distintas por tipo: 17 15 25 | total: 33 
+  Saturacion (extremas + m aleatorias -> soluciones distintas):
+ 10  25  50 100 200 300 400 
+ 18  20  21  23  28  30  33 
+  Solo aleatorias (m -> soluciones distintas):
+ 10  25  50 100 200 300 400 
+  5  10  12  17  25  27  30 
+
+=====================================================================
+ C02 Y muchos jovenes (parsimoniosa) 
+  Completaciones por tipo:
+
+ extrema interior  vertice 
+     128       40       40 
+  Frecuencia de cada termino publicado por tipo de completacion:
+                     extrema vertice interior todas
+~YOUTH*ELEC*PROG       1.000   1.000     1.00 1.000
+GDP*ELEC*~DEC*YOUNG    0.375   0.175     0.25 0.312
+GDP*ELEC*PROG*~YOUNG   0.875   0.775     0.90 0.861
+  Soluciones distintas por tipo: 6 10 6 | total: 11 
+  Saturacion (extremas + m aleatorias -> soluciones distintas):
+10 25 50 80 
+ 8 10 10 11 
+  Solo aleatorias (m -> soluciones distintas):
+10 25 50 80 
+ 7  9  9 10 
+
+=====================================================================
+ C02 ~Y pocos jovenes (parsimoniosa) 
+  Completaciones por tipo:
+
+ extrema interior  vertice 
+     128       40       40 
+  Frecuencia de cada termino publicado por tipo de completacion:
+                  extrema vertice interior todas
+~ELEC               1.000     1.0    1.000 1.000
+~GDP*~PROG*~YOUNG   0.914     0.9    0.975 0.923
+~YOUTH*DEC*~PROG    0.484     0.1    0.050 0.327
+GDP*DEC*YOUNG       0.000     0.0    0.000 0.000
+YOUTH*~DEC*~YOUNG   0.344     0.0    0.000 0.212
+  Soluciones distintas por tipo: 12 21 15 | total: 33 
+  Saturacion (extremas + m aleatorias -> soluciones distintas):
+10 25 50 80 
+17 22 29 33 
+  Solo aleatorias (m -> soluciones distintas):
+10 25 50 80 
+ 9 14 21 25 
