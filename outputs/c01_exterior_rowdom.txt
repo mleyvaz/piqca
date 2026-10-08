@@ -1,0 +1,12 @@
+
+====  neg  | filas indeterminadas o posibles: 8 
+Soluciones en la exterior (row.dom = TRUE): 8 
+Nucleo exterior K(R+): ~SR1900*~SUPPREL*SUPPURB + GDP*FOG*~SUPPREL*SUPPURB + RELFRAG*~SR1900 
+Nucleo interior K(R-): ~SR1900*~SUPPREL*SUPPURB + GDP*FOG*~SUPPREL*SUPPURB + RELFRAG*~SR1900 
+Cotas iguales (solucion cierta exacta): TRUE 
+Publicada en la exterior: TRUE 
+Interior contenida en exterior: TRUE 
+Terminos publicados en K(R+): 3 / 4 
+
+====  pos  | filas indeterminadas o posibles: 11 
+exterior con row.dom no enumerada ( 11 > 10 ); se reporta solo la interior

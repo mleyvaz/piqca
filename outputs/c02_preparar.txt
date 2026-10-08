@@ -1,0 +1,57 @@
+Universo (nr.MPs >= 10): 127 partidos
+
+Faltantes por condicion / resultado en el universo:
+YOUTH   GDP  ELEC   DEC  PROG YOUNG     Y 
+    0     0     0    22     0     0     0 
+
+Analizados: 105  Eliminados: 22 
+Eliminados (solo les falta DEC; Inclusiveness tampoco esta, pero no es condicion):
+         partido ARI35     Y YOUTH  GDP ELEC  PROG YOUNG
+    BEL-PTB/PVDA 0.632 0.567   0.4 0.63    1 0.995 0.931
+         CZE-ODS 0.000 0.039   0.4 0.17    1 0.346 0.378
+          DNK-RV 1.147 0.990   0.4 0.81    1 0.968 0.005
+          EST-ER 0.096 0.063   0.4 0.07    1 0.197 0.401
+           EST-K 0.356 0.213   0.7 0.07    1 0.391 0.401
+      EST-RESPUB 0.000 0.039   0.0 0.07    1 0.032 0.664
+        EST-EKRE 0.587 0.483   0.4 0.07    1 0.055 0.941
+ HUN-FiDeSz-KDNP 0.121 0.072   0.0 0.04    1 0.000 0.312
+        HUN-MSzP 0.000 0.039   1.0 0.04    1 0.645 0.312
+         ITA-FDI 0.524 0.399   1.0 0.39    1 0.013 0.931
+         JPN-LDP 0.088 0.060   0.7 0.59    0 0.228 0.026
+         JPN-JCP 0.000 0.039   0.0 0.59    0 0.777 0.026
+         JPN-CDP 0.171 0.091   0.0 0.59    0 0.969 0.970
+        LVA-SDPS 0.000 0.039   0.0 0.03    1 0.119 0.941
+     LVA-LZS/LZP 0.368 0.224   0.0 0.03    1 0.169 0.664
+      LVA-FORLAT 0.735 0.758   0.0 0.03    1 0.047 0.888
+      LVA-KPV LV 1.264 0.996   0.0 0.03    1 0.012 0.970
+     LVA-NewCONS 1.214 0.994   0.0 0.03    1 0.005 0.970
+         MEX-PRI 0.151 0.083   1.0 0.01    0 0.338 0.006
+         NLD-PVV 1.028 0.973   0.0 0.86    1 0.000 0.825
+   USA-Democrats 0.125 0.073   1.0 0.93    0 0.967 0.000
+ USA-Republicans 0.081 0.059   0.0 0.93    0 0.391 0.000
+
+Filas observadas: 35 | OUT=1: 9 | casos: 105 
+Filas OUT=1 identicas a las publicadas: TRUE 
+Max |incl reproducida - publicada| en 14 filas de control: 0 
+
+pars_Y   publicada : ~YOUTH*ELEC*PROG + GDP*ELEC*~DEC*YOUNG + GDP*ELEC*PROG*~YOUNG
+         reproducida: ~YOUTH*ELEC*PROG + GDP*ELEC*~DEC*YOUNG + GDP*ELEC*PROG*~YOUNG
+         IDENTICA: TRUE
+
+pars_nY  publicada : ~ELEC + ~GDP*~PROG*~YOUNG + ~YOUTH*DEC*~PROG + GDP*DEC*YOUNG + YOUTH*~DEC*~YOUNG
+         reproducida: ~ELEC + ~GDP*~PROG*~YOUNG + ~YOUTH*DEC*~PROG + GDP*DEC*YOUNG + YOUTH*~DEC*~YOUNG
+         IDENTICA: TRUE
+
+cons_Y   publicada : ~YOUTH*~GDP*ELEC*DEC*PROG + ~YOUTH*ELEC*PROG*~YOUNG + ~YOUTH*GDP*ELEC*~DEC*YOUNG + GDP*ELEC*PROG*~YOUNG
+         reproducida: ~YOUTH*~GDP*ELEC*DEC*PROG + ~YOUTH*ELEC*PROG*~YOUNG + ~YOUTH*GDP*ELEC*~DEC*YOUNG + GDP*ELEC*PROG*~YOUNG
+         IDENTICA: TRUE
+
+cons_nY  publicada : ~ELEC*~DEC*PROG*~YOUNG + ~YOUTH*~ELEC*~PROG*YOUNG + ~YOUTH*~GDP*~DEC*~PROG*~YOUNG + ~YOUTH*GDP*DEC*~PROG + GDP*~ELEC*~YOUNG + YOUTH*ELEC*~DEC*~YOUNG + YOUTH*GDP*ELEC*DEC*PROG*YOUNG
+         reproducida: ~ELEC*~DEC*PROG*~YOUNG + ~YOUTH*~ELEC*~PROG*YOUNG + ~YOUTH*~GDP*~DEC*~PROG*~YOUNG + ~YOUTH*GDP*DEC*~PROG + GDP*~ELEC*~YOUNG + YOUTH*ELEC*~DEC*~YOUNG + YOUTH*GDP*ELEC*DEC*PROG*YOUNG
+         IDENTICA: TRUE
+
+Ajuste pars_Y reproducido: incl 0.746 cov 0.538 (publicado 0.746 / 0.538)
+
+Celdas faltantes por variable entre los eliminados:
+YOUTH   GDP  ELEC   DEC  PROG YOUNG 
+    0     0     0    22     0     0 

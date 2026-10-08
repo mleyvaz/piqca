@@ -1,0 +1,7 @@
+*.rds
+.Rhistory
+.RData
+outputs/sim_v1/
+outputs/sim_v1_ruido004/
+data/C01_ettensperger/*.csv
+data/wdr2026/*.csv
