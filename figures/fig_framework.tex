@@ -1,0 +1,38 @@
+% Figure 1: PI-QCA workflow (TikZ, greyscale)
+\begin{tikzpicture}[
+  node distance=7mm and 9mm,
+  box/.style={draw, rounded corners=2pt, align=center, font=\footnotesize, text width=38mm,
+              inner sep=4pt, minimum height=13mm, execute at begin node={\hyphenpenalty=10000\exhyphenpenalty=10000}},
+  key/.style={box, fill=black!12, thick},
+  arr/.style={-{Stealth[length=2.2mm]}, thick}
+]
+% row 1: data
+\node[box] (data) {Data with missing\\membership scores};
+\node[box, right=of data] (int) {Intervals $[\ell_{ij},u_{ij}]$;\\$[0,1]$ when nothing is known};
+\node[box, right=of int] (comp) {Completions $x \in \mathcal{B}$:\\every choice of values\\inside the intervals};
+% row 2
+\node[box, below=10mm of data] (terms) {Exact bounds of\\consistency and coverage\\of any term (Props.~\ref{prop:term}--\ref{prop:bounds})};
+\node[box, below=10mm of int] (rows) {Status of each row:\\stably 1, stably 0 or undetermined;\\observed, possibly observed\\or remainder};
+\node[box, below=10mm of comp] (inner) {Inner bound $\mathcal{R}^-$:\\QCA protocol run on\\extreme and sampled completions};
+% row 3
+\node[box, below=of rows] (outer) {Outer bound $\mathcal{R}^+$:\\minimize every assignment\\of row statuses allowed};
+\node[box, below=of inner] (sand) {$\mathcal{R}^- \subseteq \mathcal{R} \subseteq \mathcal{R}^+$\\(Prop.~\ref{prop:sandwich})};
+% row 4: outputs
+\node[key, below=of outer] (cert) {\textbf{Certificate}: a solution\\outside $\mathcal{R}^+$ is produced\\by no completion (Cor.~\ref{cor:cert})};
+\node[key, below=of sand] (out) {\textbf{Sure solution} $K$,\\\textbf{possible region} $\mathcal{R}$\\and \textbf{identification gap}};
+% arrows
+\draw[arr] (data) -- (int);
+\draw[arr] (int) -- (comp);
+\coordinate (bus) at ($(comp.south)+(0,-4mm)$);
+\draw[thick] (comp.south) -- (bus);
+\draw[thick] (bus) -- (bus -| terms.north);
+\draw[arr] (bus -| terms.north) -- (terms.north);
+\draw[arr] (bus -| rows.north) -- (rows.north);
+\draw[arr] (bus) -- (inner.north);
+\draw[arr] (terms.east) -- (terms.east -| rows.west);
+\draw[arr] (rows) -- (outer);
+\draw[arr] (inner) -- (sand);
+\draw[arr] (outer.east) -- ++(4mm,0) |- (sand.west);
+\draw[arr] (outer) -- (cert);
+\draw[arr] (sand) -- (out);
+\end{tikzpicture}
