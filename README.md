@@ -48,8 +48,10 @@ as an empty solution. This emptied the sure solution whenever a single completio
 Ettensperger and Schleutker (2025), one of the 528 completions for high restrictions had failed: the sure solution
 reported as *certified empty* in preprint v1 is in fact bounded above by `GDP*SR1900*~SUPPURB` (present in all 528
 completions), and the inner bound has 33 distinct solutions, not 34. The corrected code drops failed minimizations
-from the inner bound and treats an outer bound with a failure as not enumerated. The simulation is rerun with
-`simulacion_v2.R`.
+from the inner bound and treats an outer bound with a failure as not enumerated. The simulation was rerun with
+`simulacion_v2.R` (outputs/simulacion_v2_replicas.csv, outputs/simulacion_v2_resumen.txt): the guarantee held in 900 of
+900 replicates; 172 inner-bound minimizations failed (39 replicates) and 52 outer bounds were invalidated; the empty
+sure solution fell from 355 to 344 replicates and certified incompatibility is 23 of 552 enumerated replicates.
 
 ## Licence
 Code: MIT. Data in `data/C02_kurz`: CC BY 4.0 (see its README).
